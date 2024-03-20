@@ -4,10 +4,9 @@ interface Props {
     title: string;
     href: string;
     icon: JSX.Element;
-    isLine?: boolean;
 }
 
-export const SidebarItemMenu = ({ title, href, icon, isLine = false }: Props) => {
+export const SidebarItemMenu = ({ title, href, icon }: Props) => {
     return (
         <Link href={href} className="flex items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all">
             {icon}

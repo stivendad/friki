@@ -18,42 +18,49 @@ export const Sidebar = () => {
     const isSideMenuOpen = useUiStore(state => state.isSideMenuOpen);
     const closeMenu = useUiStore(state => state.closeSideMenu);
 
-    const itemMenu: ItemMenuProps[] = [
+    const itemMenu = [
         {
             title: 'Perfil',
             href: '/',
             icon: <IoPersonOutline size={30} />,
+            id: 1,
         },
         {
             title: 'Ordenes',
             href: '/',
             icon: <IoTicketOutline size={30} />,
+            id: 2,
         },
         {
             title: 'Ingresar',
             href: '/',
             icon: <IoLogInOutline size={30} />,
+            id: 3,
         },
         {
             title: 'Salir',
             href: '/',
             icon: <IoLogOutOutline size={30} />,
             isLine: true,
+            id: 4,
         },
         {
             title: 'Productos',
             href: '/',
             icon: <IoShirtOutline size={30} />,
+            id: 5,
         },
         {
             title: 'Ordenes',
             href: '/',
             icon: <IoTicketOutline size={30} />,
+            id: 6,
         },
         {
             title: 'Usuarios',
             href: '/',
             icon: <IoPeopleOutline size={30} />,
+            id: 7,
         },
     ]
 
@@ -98,9 +105,9 @@ export const Sidebar = () => {
                 {/* Menu */}
 
                 {
-                    itemMenu.map((item, i) => (
+                    itemMenu.map((item) => (
                         <>
-                            <SidebarItemMenu key={i} title={item.title} href={item.href} icon={item.icon} />
+                            <SidebarItemMenu key={item.id} title={item.title} href={item.href} icon={item.icon} />
                             {(item.isLine) && <div className="w-full h-px bg-gray-200 my-10" />}
                         </>
 
