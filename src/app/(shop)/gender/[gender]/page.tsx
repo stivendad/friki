@@ -2,6 +2,7 @@ import { getPaginatedProductsWithImages } from "@/actions";
 import { Pagination, ProductGrid, Title } from "@/components";
 import { initialData } from "@/seed/seed";
 import { Gender } from "@prisma/client";
+import { Metadata, ResolvingMetadata } from "next";
 import { notFound, redirect } from "next/navigation";
 
 interface Props {
@@ -14,13 +15,25 @@ interface Props {
   }
 }
 
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
+  const gender = params.gender[0].toUpperCase() + params.gender.slice(1);
+
+  return {
+    title: gender
+  }
+}
+
 export default async function CategoryPage({ params, searchParams }: Props) {
 
   const { gender } = params;
 
-  const page = searchParams.page ? parseInt(searchParams.page): 1;
+  const page = searchParams.page ? parseInt(searchParams.page) : 1;
 
-  const { products, currentPage, totalPages } = await getPaginatedProductsWithImages({page, gender: gender as Gender});
+  const { products, currentPage, totalPages } = await getPaginatedProductsWithImages({ page, gender: gender as Gender });
 
   if (products.length === 0) {
     redirect(`/gender/${gender}`);
@@ -47,7 +60,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
     <>
       <Title title='Articulos para' subtitle={`Lo mejor para ${subTitles[gender]}`} span={`${labels[gender]}`} className="mb-2" />
 
-      <ProductGrid products={products}  />
+      <ProductGrid products={products} />
 
       <Pagination totalPages={totalPages} />
     </>

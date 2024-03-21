@@ -2,11 +2,8 @@
 
 import prisma from "@/lib/prisma"
 
-interface Props {
-    slug: string
-}
 
-export const getStockBySlug = async ({ slug }: Props): Promise<number> => {
+export const getStockBySlug = async (slug: string): Promise<number> => {
 
     try {
         const stock = await prisma.product.findFirst({
@@ -17,7 +14,7 @@ export const getStockBySlug = async ({ slug }: Props): Promise<number> => {
                 inStock: true
             }
         })
-    
+
         return stock?.inStock ?? 0;
     } catch (error) {
         return 0;

@@ -6,7 +6,10 @@ import "./globals.css";
 
 
 export const metadata: Metadata = {
-  title: "friki | Shop",
+  title: {
+    template: '%s - friki | Shop',
+    default: 'Home - friki | Shop'
+  },
   description: "Una tienda virutal de productos geek",
 };
 
