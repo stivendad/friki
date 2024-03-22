@@ -17,7 +17,6 @@ interface Props {
 
 export async function generateMetadata(
   { params }: Props,
-  parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
   const gender = params.gender[0].toUpperCase() + params.gender.slice(1);

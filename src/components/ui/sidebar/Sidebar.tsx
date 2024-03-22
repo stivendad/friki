@@ -5,13 +5,6 @@ import { SidebarItemMenu } from "./SidebarItemMenu";
 import { useUiStore } from "@/store";
 import clsx from "clsx";
 
-interface ItemMenuProps {
-    title: string;
-    href: string;
-    icon: JSX.Element;
-    isLine?: boolean;
-}
-
 
 export const Sidebar = () => {
 
@@ -23,44 +16,37 @@ export const Sidebar = () => {
             title: 'Perfil',
             href: '/',
             icon: <IoPersonOutline size={30} />,
-            id: 1,
         },
         {
             title: 'Ordenes',
             href: '/',
             icon: <IoTicketOutline size={30} />,
-            id: 2,
         },
         {
             title: 'Ingresar',
             href: '/',
             icon: <IoLogInOutline size={30} />,
-            id: 3,
         },
         {
             title: 'Salir',
             href: '/',
             icon: <IoLogOutOutline size={30} />,
             isLine: true,
-            id: 4,
         },
         {
             title: 'Productos',
             href: '/',
             icon: <IoShirtOutline size={30} />,
-            id: 5,
         },
         {
             title: 'Ordenes',
             href: '/',
             icon: <IoTicketOutline size={30} />,
-            id: 6,
         },
         {
             title: 'Usuarios',
             href: '/',
             icon: <IoPeopleOutline size={30} />,
-            id: 7,
         },
     ]
 
@@ -105,9 +91,9 @@ export const Sidebar = () => {
                 {/* Menu */}
 
                 {
-                    itemMenu.map((item) => (
+                    itemMenu.map((item, i) => (
                         <>
-                            <SidebarItemMenu key={item.id} title={item.title} href={item.href} icon={item.icon} />
+                            <SidebarItemMenu key={`${i}-${item.title}`} title={item.title} href={item.href} icon={item.icon} />
                             {(item.isLine) && <div className="w-full h-px bg-gray-200 my-10" />}
                         </>
 
