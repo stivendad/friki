@@ -47,9 +47,6 @@ export const AddToCart = ({ product }: Props) => {
                 )
 
             }
-            <span className="mt2">
-                Debe seleccionar una talla*
-            </span>
             {/* Selector de tallas */}
             <SizeSelector
                 selectedSize={size}
