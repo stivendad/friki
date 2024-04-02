@@ -64,7 +64,7 @@ export default async function ProductPage({ params }: Props) {
       {/* Detalles */}
       <div className="col-span-1 px-5">
 
-        {/* <StockLabel slug={product.slug} /> */}
+        <StockLabel slug={product.slug} />
 
         <h1 className={`${titleFont.className} antialiased font-bold text-xl`}>{product.title}</h1>
         <p className="text-lg mb-5">${product.price}</p>
