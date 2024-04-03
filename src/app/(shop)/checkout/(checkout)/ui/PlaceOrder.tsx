@@ -27,10 +27,7 @@ export const PlaceOrder = () => {
         setLoaded(true);
     }, []);
 
-    if (cart.length === 0) {
-        router.push('/');
-        return; 
-    }
+    
 
     const onPlaceOrder = async () => {
         setIsPlacingOrder(true);
@@ -50,6 +47,8 @@ export const PlaceOrder = () => {
             setErrorMessage(resp.message);
             return;
         }
+
+        
 
         
 

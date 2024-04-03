@@ -19,4 +19,6 @@ export * from './product/slideshow/ProductSlideshow';
 export * from './product/slideshow/ProductMobilSlideshow';
 export * from './product/stock-label/StockLabel';
 
-export * from './provider/Provider';
+export * from './providers/Providers';
+
+export * from './paypal/PaypalButton';
