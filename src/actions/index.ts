@@ -1,27 +1,27 @@
-export * from './products/product-pagination';
-export * from './products/get-product-by-slug';
-export * from './products/get-stock-by-slug';
-export * from './products/create-update-product';
-export * from './products/delete-product-image';
+export { createUpdateProduct } from './products/create-update-product';
+export { deleteProductImage } from './products/delete-product-image';
+export { getProductBySlug } from './products/get-product-by-slug';
+export { getStockBySlug } from './products/get-stock-by-slug';
+export { getPaginatedProductsWithImages } from './products/product-pagination';
 
-export * from './auth/login';
-export * from './auth/logout';
-export * from './auth/register';
+export { authenticate, login } from './auth/login';
+export { logout } from './auth/logout';
+export { registerUser } from './auth/register';
 
-export * from './cities/get-cities';
+export { getCities } from './cities/get-cities';
 
-export * from './address/set-user-address';
-export * from './address/delete-user-address';
+export { setUserAddress } from './address/set-user-address';
+export { deleteUserAddress } from './address/delete-user-address';
 
-export * from './order/place-order';
-export * from './order/get-order-by-id';
-export * from './order/get-orders-by-user';
-export * from './order/get-paginated-orders';
+export { placeOrder } from './order/place-order';
+export { getOrderById } from './order/get-order-by-id';
+export { getOrdersByUser } from './order/get-orders-by-user';
+export { getPaginatedOrders } from './order/get-paginated-orders';
 
-export * from './payments/set-transaction-id';
-export * from './payments/paypal-check-payment';
+export { setTransactionId } from './payments/set-transaction-id';
+export { paypalCheckPayment } from './payments/paypal-check-payment';
 
-export * from './user/get-pagination-users';
-export * from './user/change-user-role';
+export { getPaginationUsers } from './user/get-pagination-users';
+export { changeUserRole } from './user/change-user-role';
 
-export * from './categories/get-categories';
+export { getCategories } from './categories/get-categories';
